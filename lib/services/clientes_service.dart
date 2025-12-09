@@ -9,7 +9,7 @@ class ClientesService {
   Future<List<Cliente>> getClientes() async {
     final response = await http.get(
       Uri.parse(baseUrl),
-      headers: { "x-api-key": apiKey },
+      headers: {"x-api-key": apiKey},
     );
 
     if (response.statusCode == 200) {

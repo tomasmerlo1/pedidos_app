@@ -5,11 +5,11 @@ import '../models/pedido.dart';
 class PedidosService {
   static const String baseUrl = "http://localhost:3000/pedidos";
   static const String apiKey = "123456";
-  
+
   Future<List<Pedido>> getPedidos() async {
     final response = await http.get(
       Uri.parse(baseUrl),
-      headers: { "x-api-key": apiKey },
+      headers: {"x-api-key": apiKey},
     );
 
     if (response.statusCode == 200) {
@@ -23,7 +23,7 @@ class PedidosService {
   Future<Pedido> getPedidoCompleto(int id) async {
     final response = await http.get(
       Uri.parse("$baseUrl/completo/$id"),
-      headers: { "x-api-key": apiKey },
+      headers: {"x-api-key": apiKey},
     );
 
     if (response.statusCode == 200) {
@@ -32,5 +32,24 @@ class PedidosService {
     }
 
     throw Exception("Error al obtener detalle del pedido");
+  }
+
+  Future<bool> crearPedido({
+    required int idCliente,
+    required int idProducto,
+    required int cantidad,
+  }) async {
+    final response = await http.post(
+      Uri.parse(baseUrl),
+      headers: {"Content-Type": "application/json", "x-api-key": apiKey},
+      body: json.encode({
+        "id_cliente": idCliente,
+        "detalles": [
+          {"id_producto": idProducto, "cantidad": cantidad},
+        ],
+      }),
+    );
+
+    return response.statusCode == 200;
   }
 }

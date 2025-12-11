@@ -42,7 +42,7 @@ class PedidosService {
     final response = await http.post(
       Uri.parse(baseUrl),
       headers: {"Content-Type": "application/json", "x-api-key": apiKey},
-      body: json.encode({
+      body: jsonEncode({
         "id_cliente": idCliente,
         "detalles": [
           {"id_producto": idProducto, "cantidad": cantidad},

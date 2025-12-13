@@ -1,16 +1,42 @@
-# pedidos_app
+# Pedidos App — Frontend en Flutter
 
-A new Flutter project.
+Esta es la **aplicación frontend** desarrollada con **Flutter** para consumir la API de pedidos implementada en Node.js y desplegada en Render.
 
-## Getting Started
+La app permite:
+- Ver la lista de clientes
+- Ver la lista de productos
+- Ver y crear pedidos
+- Consultar el detalle de cada pedido
 
-This project is a starting point for a Flutter application.
+Se comunica con la API REST que expone los datos para clientes, productos, pedidos y detalles.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 Tecnologías
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Esta app fue construida con:
+
+- Flutter SDK
+- Dart
+- Librería `http` para consumir la API
+- Compatible con ejecución en **Web (Chrome)**
+
+---
+
+## 🔗 Backend
+
+La app está diseñada para consumir la API desplegada en:
+https://api-pedidos-nnnv.onrender.com/
+
+## 📦 Instalación y ejecución
+
+1. **Clonar el repositorio**
+    ```bash
+    git clone https://github.com/tomasmerlo1/pedidos_app.git
+    cd pedidos_app
+
+2. Instalar dependencias
+    flutter pub get
+
+3. Ejecutar en modo navegador (Chrome)
+    flutter run -d chrome

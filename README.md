@@ -8,7 +8,7 @@ La app permite:
 - Ver y crear pedidos
 - Consultar el detalle de cada pedido
 
-Se comunica con la API REST que expone los datos para clientes, productos, pedidos y detalles.
+Se comunica con una API REST que expone los datos de clientes, productos, pedidos y detalles.
 
 ---
 
@@ -19,24 +19,29 @@ Esta app fue construida con:
 - Flutter SDK
 - Dart
 - Librería `http` para consumir la API
-- Compatible con ejecución en **Web (Chrome)**
+- Ejecución en **Web (Chrome)**
 
 ---
 
 ## 🔗 Backend
 
-La app está diseñada para consumir la API desplegada en:
-https://api-pedidos-nnnv.onrender.com/
+La aplicación consume la API desplegada en Render:
+
+👉 https://api-pedidos-pmbg.onrender.com
+
+La API está protegida mediante una **API Key**, enviada en los headers de cada request:
+
+x-api-key: 123456
 
 ## 📦 Instalación y ejecución
 
 1. **Clonar el repositorio**
-    ```bash
+
     git clone https://github.com/tomasmerlo1/pedidos_app.git
     cd pedidos_app
 
-2. Instalar dependencias
+2. **Instalar dependencias**
     flutter pub get
 
-3. Ejecutar en modo navegador (Chrome)
+3. **Ejecutar en modo navegador (Chrome)**
     flutter run -d chrome
